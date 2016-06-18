@@ -190,7 +190,17 @@ RELAY_WEECHAT_PROTOCOL_CALLBACK(init)
                                                                NULL, NULL, NULL);
                     if (password)
                     {
-                        if (strcmp (password, pos) == 0)
+/*                      if (strcmp (password, pos) == 0)
+ *
+ *                      Since relay.conf is saved in plaintext, adding bcrypt hashing to enable a little more security since
+ *                      root can see files even if they are chmod 0600.
+ *
+ *                      Relies on the bcrypt wrapper from rg3 which consequently was taken from the openwall bcrypt and should
+ *                      be cross platform.
+ *
+ *                      - rasengan <rasengan@serv.ninja>
+ */
+                        if(bcrypt_checkpw(pos, password) == 0)
                         {
                             RELAY_WEECHAT_DATA(client, password_ok) = 1;
                             weechat_hook_signal_send ("relay_client_auth_ok",

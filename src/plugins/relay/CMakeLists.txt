@@ -34,7 +34,14 @@ relay-network.c relay-network.h
 relay-raw.c relay-raw.h
 relay-server.c relay-server.h
 relay-upgrade.c relay-upgrade.h
-relay-websocket.c relay-websocket.h)
+relay-websocket.c relay-websocket.h
+weechat/bcrypt/bcrypt.c weechat/bcrypt/bcrypt.h
+weechat/bcrypt/crypt_blowfish/crypt_gensalt.h
+weechat/bcrypt/crypt_blowfish/crypt_blowfish.c
+weechat/bcrypt/crypt_blowfish/crypt.h weechat/bcrypt/crypt_blowfish/ow-crypt.h
+weechat/bcrypt/crypt_blowfish/wrapper.c
+weechat/bcrypt/crypt_blowfish/crypt_blowfish.h
+weechat/bcrypt/crypt_blowfish/crypt_gensalt.c)
 set_target_properties(relay PROPERTIES PREFIX "")
 
 set(LINK_LIBS)
