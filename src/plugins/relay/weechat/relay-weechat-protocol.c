@@ -33,7 +33,7 @@
 #include "../relay-client.h"
 #include "../relay-config.h"
 #include "../relay-raw.h"
-
+#include "bcrypt/bcrypt.h"
 
 /*
  * Checks if the buffer pointer is a relay buffer (relay raw/list).
